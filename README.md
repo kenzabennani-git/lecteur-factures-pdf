@@ -26,5 +26,5 @@ Projet en cours de developpement.
 
 ## Auteur
 
-Kenza Bennani - BTS SIO SLAM - 2026
+Kenza Bennani - BTS SIO SLAM - 2025
 
