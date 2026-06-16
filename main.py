@@ -1,22 +1,26 @@
 import pdfplumber
 import re
 import mysql.connector
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ----------------------------------------------------
 # 1. CONNEXION À LA BASE DE DONNÉES
 # ----------------------------------------------------
 conn = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="projet_stage"
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
 )
 cursor = conn.cursor()
 print("Connexion à la base réussie !")
 
 # Variables pour le fournisseur
 fournisseur_id_to_insert = None
-fournisseur = None 
+fournisseur = None
 
 # ----------------------------------------------------
 # 2. EXTRACTION DU TEXTE DU PDF
